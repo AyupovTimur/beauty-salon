@@ -1,0 +1,34 @@
+@use "./variables.scss" as vars;
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+* {
+  font-family: "Garamond", "EB Garamond", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: vars.$text-color;
+}
+
+a,
+ul,
+li {
+  text-decoration: none;
+  color: vars.$text-color;
+  list-style-type: none;
+}
+
+input,
+button,
+textarea,
+select {
+  margin: 0;
+  font: inherit;
+}

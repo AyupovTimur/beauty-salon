@@ -1,0 +1,43 @@
+@use "../../styles/variables.scss" as vars;
+
+.footer {
+  display: flex;
+  justify-content: center;
+  min-height: 20vh;
+  background-color: vars.$main-color;
+
+  &__border {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 62%;
+    border-top: 0.2rem solid vars.$decoration-color;
+    border-bottom: 0.2rem solid vars.$decoration-color;
+    margin-bottom: 3rem;
+    padding: 3rem 0;
+  }
+
+  &__icon {
+    width: 7rem;
+  }
+
+  &__socialMedia {
+    display: flex;
+    flex-direction: column;
+    width: 3rem;
+    img {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 2.5rem;
+    font-size: vars.$l-size;
+    font-weight: vars.$l-text-weight;
+  }
+
+  &__listItem {
+    font-size: vars.$m-size;
+    margin-bottom: 2.5rem;
+  }
+}
