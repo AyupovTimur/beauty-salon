@@ -22,7 +22,7 @@ const Header = () => {
             />
           </a>
           <li className="header__item">Главная</li>
-          <li className="header__item">Мастера</li>
+          <li className="header__item">Обо мне</li>
           <li className="header__item">Косметика</li>
           <img
             style={{ width: "5rem", height: "5rem" }}

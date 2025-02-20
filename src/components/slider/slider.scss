@@ -1,0 +1,75 @@
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    border-radius: 0;
+  }
+}
+
+.slidesContainer {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+
+  @media (max-width: 480px) {
+    height: 250px;
+  }
+}
+
+.leftArrow,
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.leftArrow {
+  left: 10px;
+}
+
+.rightArrow {
+  right: 10px;
+}
