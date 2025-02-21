@@ -1,0 +1,40 @@
+@use "../../styles/variables.scss" as vars;
+
+.servicePrices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: vars.$main-color;
+  padding: 5rem 0;
+
+  &__img {
+    width: 45rem;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+
+  &__title {
+    font-family: "EB Garamond";
+    font-size: vars.$xll-size;
+    font-weight: vars.$l-text-weight;
+    margin-bottom: 5rem;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    &-service {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 0.1rem solid vars.$text-color;
+      margin-bottom: 3rem;
+      font-size: vars.$l-size;
+    }
+  }
+}

@@ -25,7 +25,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer__workMode">
-          <div className="footer__title">Режми работы</div>
+          <div className="footer__title">Режим работы</div>
           <ul>
             <li className="footer__listItem">С 10:00 до 20:00 (Пн-Пт)</li>
             <li className="footer__listItem">С 12:00 до 18:00 (Сб-Вс)</li>

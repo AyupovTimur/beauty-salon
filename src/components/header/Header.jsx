@@ -1,6 +1,8 @@
 import instagramIcon from "../../images/header/instIcon.svg";
 import headerIcon from "../../images/header/headerIcon.svg";
 import { useState } from "react";
+import { NavLink } from "react-router";
+
 import "./header.scss";
 
 const Header = () => {
@@ -21,18 +23,46 @@ const Header = () => {
               alt="instagramIcon"
             />
           </a>
-          <li className="header__item">Главная</li>
-          <li className="header__item">Обо мне</li>
-          <li className="header__item">Косметика</li>
-          <img
-            style={{ width: "5rem", height: "5rem" }}
-            className="header__icon"
-            src={headerIcon}
-            alt="headerIcon"
-          />
-          <li className="header__item">Акции</li>
-          <li className="header__item">Отзывы</li>
-          <li className="header__item">Контакты</li>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "active-link" : "header__item"
+            }
+          >
+            Главная
+          </NavLink>
+          <NavLink
+            to="/aboutMe"
+            className={({ isActive }) =>
+              isActive ? "activeLink" : "header__item"
+            }
+          >
+            Обо мне
+          </NavLink>
+          <NavLink to="/">
+            <img
+              style={{ width: "5rem", height: "5rem" }}
+              className="header__icon"
+              src={headerIcon}
+              alt="headerIcon"
+            />
+          </NavLink>
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              isActive ? "activeLink" : "header__item"
+            }
+          >
+            Услуги
+          </NavLink>
+          <NavLink
+            to="/feedback"
+            className={({ isActive }) =>
+              isActive ? "activeLink" : "header__item"
+            }
+          >
+            Отзывы
+          </NavLink>
           {<BurgerMenu open={open} onOpen={onOpen} />}
         </ul>
       </nav>

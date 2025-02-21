@@ -52,12 +52,6 @@ const BeautyServices = () => {
           </div>
           <div className="services__cards-text">Косметология</div>
         </div>
-        <div className="services__cards_item">
-          <div className="services__cards_item-border">
-            <img src={cardImg} alt="cosmetology-icon" />
-          </div>
-          <div className="services__cards-text">Косметология</div>
-        </div>
       </div>
       <div className="services__brends">
         <div className="services__brends-group">

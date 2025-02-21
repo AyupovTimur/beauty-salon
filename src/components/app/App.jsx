@@ -1,16 +1,27 @@
-import BeautyServices from "../beautyServices/BeautyServices";
-import Header from "../header/Header";
-import OurWorks from "../ourWorks/OurWorks";
+import { lazy } from "react";
+import { Routes, Route } from "react-router";
 import Footer from "../footer/Footer";
-import BeautyMasters from "../beautyMasters/BeautyMasters";
+
+const Header = lazy(() => import("../header/Header"));
+const MainPage = lazy(() => import("../../pages/mainPage/MainPage"));
+const AboutMePage = lazy(() => import("../../pages/aboutMePage/AboutMePage"));
+const FeedbackPage = lazy(() =>
+  import("../../pages/feedbackPage/FeedbackPage")
+);
+const ServicesPage = lazy(() =>
+  import("../../pages/servicesPage/ServicesPage")
+);
 
 const App = () => {
   return (
     <div className="app">
       <Header />
-      <BeautyMasters />
-      <BeautyServices />
-      <OurWorks />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/aboutMe" element={<AboutMePage />} />
+        <Route path="/feedback" element={<FeedbackPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+      </Routes>
       <Footer />
     </div>
   );

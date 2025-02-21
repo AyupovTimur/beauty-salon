@@ -43,6 +43,10 @@
         &:hover::after {
           width: 100%;
         }
+
+        &:hover {
+          color: vars.$decoration-color;
+        }
       }
     }
   }
