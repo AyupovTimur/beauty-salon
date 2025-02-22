@@ -1,7 +1,20 @@
 import "./ourWorks.scss";
 import works from "../../images/ourWorks/work.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchPortfolioData } from "../../reduxSlices/portfolioSlice/portfolioSlice";
 
 const OurWorks = () => {
+  const portfolioData = useSelector((state) => state.portfolio.portfolioData);
+  const portfolioUpload = useSelector(
+    (state) => state.portfolio.portfolioUpload
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchPortfolioData());
+  }, []);
+
   return (
     <div className="ourWorks">
       <h2 className="ourWorks__title">Мои работы</h2>
