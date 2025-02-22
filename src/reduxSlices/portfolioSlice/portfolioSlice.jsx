@@ -4,6 +4,7 @@ import useBeautyShop from "../../services/useBeautyShop";
 const initialState = {
   portfolioData: [],
   portfolioUpload: "idle",
+  portfolioFilter: "all",
 };
 
 export const fetchPortfolioData = createAsyncThunk(

@@ -17,7 +17,13 @@ const useBeautyShop = () => {
     return onePortfolioUnit;
   };
 
-  return { getFullPortfolioData, getOnePortfolioUnit };
-};
+  const getFullPricesData = async () => {
+    const pricesData = await request(
+      "https://67b8aafe699a8a7baef4df47.mockapi.io/prices"
+    );
+    return pricesData;
+  };
 
+  return { getFullPortfolioData, getOnePortfolioUnit, getFullPricesData };
+};
 export default useBeautyShop;

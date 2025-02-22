@@ -8,33 +8,81 @@
   background-color: vars.$main-color;
   padding: 5rem 0;
 
-  &__img {
-    width: 45rem;
-  }
-
-  &__container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5rem;
-  }
-
   &__title {
     font-family: "EB Garamond";
     font-size: vars.$xll-size;
     font-weight: vars.$l-text-weight;
     margin-bottom: 5rem;
   }
+}
 
-  &__card {
-    display: flex;
-    flex-direction: column;
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
 
-    &-service {
+  .service-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+
+    &:nth-child(odd) {
+      .service-image {
+        order: 1;
+      }
+      .service-list {
+        order: 2;
+      }
+    }
+
+    &:nth-child(even) {
+      .service-image {
+        order: 2;
+      }
+      .service-list {
+        order: 1;
+      }
+    }
+  }
+
+  .service-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .service-list {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+
+    .service-row {
       display: flex;
       justify-content: space-between;
-      border-bottom: 0.1rem solid vars.$text-color;
-      margin-bottom: 3rem;
-      font-size: vars.$l-size;
+      gap: 20px; // Отступ между названиями и ценами
+
+      .service-names,
+      .service-prices {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; // Отступ между строками
+
+        p {
+          margin: 0;
+          color: black;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+      }
+
+      .service-prices {
+        text-align: right; // Выравниваем цены по правому краю
+        font-weight: bold;
+        color: #333;
+      }
     }
   }
 }
