@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { Routes, Route } from "react-router";
 import Footer from "../footer/Footer";
+import BurgerMenu from "../burgerMenu/BurgerMenu";
 
 const Header = lazy(() => import("../header/Header"));
 const MainPage = lazy(() => import("../../pages/mainPage/MainPage"));
