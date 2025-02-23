@@ -1,0 +1,14 @@
+@use "../../styles/variables.scss" as vars;
+
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: vars.$main-color;
+
+  &__title {
+    font-size: vars.$xll-size;
+  }
+}

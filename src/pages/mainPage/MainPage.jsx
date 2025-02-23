@@ -1,10 +1,13 @@
 import BeautyServices from "../../components/beautyServices/BeautyServices";
 import MainSlider from "../../components/mainSlider/MainSlider";
+import ErrorBoundary from "../../components/errorBoundary/ErrorBoundary";
 
 const MainPage = () => {
   return (
     <>
-      <MainSlider />
+      <ErrorBoundary>
+        <MainSlider />
+      </ErrorBoundary>
       <BeautyServices />
     </>
   );
