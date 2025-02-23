@@ -4,7 +4,6 @@ import "./beautyMasters.scss";
 const BeautyMasters = () => {
   return (
     <div className="beautyMasters">
-      <h2 className="beautyMasters__title">Обо мне</h2>
       <div className="beautyMasters__cardGroup">
         <div className="beautyMaster-card">
           <img src={beautyMaster} alt="" className="beautyMaster-card__image" />

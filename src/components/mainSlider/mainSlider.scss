@@ -1,0 +1,23 @@
+@use "../../styles/variables.scss" as vars;
+
+.mainSlider {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: vars.$main-color;
+  padding: 9rem 0;
+
+  &__grid {
+    display: grid;
+    width: 70%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    place-items: center;
+
+    h1 {
+      font-weight: vars.$l-text-weight;
+      text-align: center;
+      font-size: vars.$xll-size;
+    }
+  }
+}

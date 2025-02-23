@@ -1,55 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import infoImg from "../../images/sliderImg/info.jpg";
+import infoImg2 from "../../images/sliderImg/info2.jpg";
 import "./slider.scss";
 
-const slides = [
-  {
-    image:
-      "https://static.tildacdn.com/tild3165-3039-4766-b237-613566383934/6.jpeg",
-  },
-  {
-    image: "https://st31.stblizko.ru/images/licenses/001/941/806_original.jpg",
-  },
-  {
-    image:
-      "https://static.tildacdn.com/tild3165-3039-4766-b237-613566383934/6.jpeg",
-  },
-];
-
 const Slider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const slides = [infoImg, infoImg2];
 
-  const goToPrevious = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const goToNext = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
   };
 
   return (
     <div className="slider">
-      <div className="slidesContainer">
+      <div
+        className="slider__slides"
+        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+      >
         {slides.map((slide, index) => (
-          <div
-            key={index}
-            className="slide"
-            style={{
-              transform: `translateX(${-100 * currentIndex}%)`,
-              backgroundImage: `url(${slide.image})`,
-            }}
-          ></div>
+          <div key={index} className="slider__slide">
+            <img src={slide} alt={`Slide ${index}`} />
+          </div>
         ))}
       </div>
-      <button className="leftArrow" onClick={goToPrevious}>
-        &larr;
-      </button>
-      <button className="rightArrow" onClick={goToNext}>
-        &rarr;
-      </button>
+      <div className="slider__pagination">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            className={`slider__pagination-dot ${
+              index === currentSlide ? "active" : null
+            }`}
+            onClick={() => goToSlide(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 };

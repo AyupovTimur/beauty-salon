@@ -7,18 +7,29 @@
   justify-content: space-around;
   background-color: vars.$main-color;
   min-height: 100vh;
-  padding: 12rem 0;
 
   &__icon {
     width: 8rem;
     height: 6.5rem;
-    margin-bottom: 6rem;
+    margin-bottom: 9rem;
   }
 
   &__description {
-    width: 62%;
+    max-width: 70%;
     font-size: vars.$xl-size;
-    margin-bottom: 9.5rem;
+    margin-bottom: 9rem;
+
+    h2 {
+      font-weight: vars.$l-text-weight;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 4rem;
+      }
+    }
   }
 
   &__cards {
@@ -37,7 +48,8 @@
         display: inline-block;
         overflow: hidden;
         img {
-          width: 30rem;
+          width: 34rem;
+          height: 26rem;
           transition: transform 0.3s ease;
         }
         &::before {
@@ -96,8 +108,8 @@
   }
 
   &__brends {
-    width: 62%;
-    margin-top: 15rem;
+    min-width: 70%;
+    margin: 9rem 0;
 
     &-group {
       display: flex;

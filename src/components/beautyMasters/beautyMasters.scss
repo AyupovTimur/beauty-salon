@@ -5,15 +5,8 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding-top: 5rem;
+  padding: 9rem 0;
   background-color: vars.$main-color;
-
-  &__title {
-    font-family: "EB Garamond";
-    font-size: vars.$xll-size;
-    font-weight: vars.$l-text-weight;
-    margin-bottom: 8rem;
-  }
 
   &__cardGroup {
     width: 62%;
@@ -35,7 +28,6 @@
   background-color: vars.$text-color;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
   z-index: 1;
-  margin-bottom: 10rem;
   &::before {
     content: "";
     position: absolute;

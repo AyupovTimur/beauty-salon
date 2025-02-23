@@ -1,8 +1,8 @@
 import "./servicePrices.scss";
-import barber from "../../images/servicePrices/barber.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getPrices } from "../../reduxSlices/servicesSlice/servicesSlice";
+import Spinner from "../spinner/Spinner";
 
 const ServicePrices = () => {
   const services = useSelector((state) => state.services.services);
@@ -13,103 +13,42 @@ const ServicePrices = () => {
 
   useEffect(() => {
     dispatch(getPrices());
+  }, [dispatch]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
-  console.log(services[0]);
-
   return (
-    <div className="servicePrices">
-      <h2 className="servicePrices__title">Цены на услуги</h2>
-      <div className="services-grid">
-        {services.map((item, i) => {
-          switch (i) {
-            case 0:
-              return (
-                <div className="service-item">
-                  <img src={barber} alt="Service 1" class="service-image" />
-                  <div class="service-list">
-                    <div class="service-row">
-                      <div class="service-names">
-                        {Object.keys(item).map((item) => {
-                          return <p>{item}</p>;
-                        })}
-                      </div>
-                      <div class="service-prices">
-                        {Object.values(item).map((item) => {
-                          return <p>{item}</p>;
-                        })}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            case 1:
-              return (
-                <div className="service-item">
-                  <img src={barber} alt="Service 1" class="service-image" />
-                  <div class="service-list">
-                    <div class="service-row">
-                      <div class="service-names">
-                        {Object.keys(item).map((item) => {
-                          return <p>{item}</p>;
-                        })}
-                      </div>
-                      <div class="service-prices">
-                        {Object.values(item).map((item) => {
-                          return <p>{item}</p>;
-                        })}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            case 2:
-              return (
-                <div className="service-item">
-                  <img src={barber} alt="Service 1" class="service-image" />
-                  <div class="service-list">
-                    <div class="service-row">
-                      <div class="service-names">
-                        {Object.keys(item).map((item) => {
-                          return <p>{item}</p>;
-                        })}
-                      </div>
-                      <div class="service-prices">
-                        {Object.values(item).map((item) => {
-                          return <p>{item}</p>;
-                        })}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            case 3:
-              return (
-                <div className="service-item">
-                  <img src={barber} alt="Service 1" class="service-image" />
-                  <div class="service-list">
-                    <div class="service-row">
-                      <div class="service-names">
-                        {Object.keys(item).map((item) => {
-                          return <p>{item}</p>;
-                        })}
-                      </div>
-                      <div class="service-prices">
-                        {Object.values(item).map((item) => {
-                          return <p>{item}</p>;
-                        })}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            default:
-              <div className="servicePrices__service">
-                К сожалению цены не загрузились
-              </div>;
-          }
-        })}
-      </div>
+    <div className="service-prices">
+      {servicesLoading === "loading" ? (
+        <Spinner />
+      ) : (
+        <View services={services} />
+      )}
+    </div>
+  );
+};
+
+const View = ({ services }) => {
+  return (
+    <div className="service-grid">
+      {services.map((service, index) => (
+        <div
+          key={service.id}
+          className={`service-item ${index % 2 === 0 ? "left" : "right"}`}
+        >
+          <img src={service.image} alt={`Услуга ${service.id}`} />
+          <ul>
+            <div className="service-title">{service.service}</div>
+            {service.items.map((item, i) => (
+              <li className="title" key={i}>
+                {item.title} <span className="price">{item.price} ₽</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   );
 };

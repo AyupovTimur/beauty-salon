@@ -1,88 +1,54 @@
 @use "../../styles/variables.scss" as vars;
 
-.servicePrices {
+.service-prices {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
   background-color: vars.$main-color;
-  padding: 5rem 0;
-
-  &__title {
-    font-family: "EB Garamond";
-    font-size: vars.$xll-size;
-    font-weight: vars.$l-text-weight;
-    margin-bottom: 5rem;
-  }
+  justify-content: center;
+  min-height: 100vh;
+  padding: 9rem 0;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
+.service-grid {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
 
   .service-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 3rem 0;
 
-    &:nth-child(odd) {
-      .service-image {
-        order: 1;
-      }
-      .service-list {
-        order: 2;
-      }
+    img {
+      max-width: 50rem;
+      max-height: 60rem;
     }
 
-    &:nth-child(even) {
-      .service-image {
-        order: 2;
-      }
-      .service-list {
-        order: 1;
-      }
+    .service-title {
+      text-align: center;
+      font-size: vars.$xl-size;
+      margin-bottom: 3rem;
     }
-  }
 
-  .service-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+    ul {
+      width: 47%;
 
-  .service-list {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    background-color: #f9f9f9;
+      .title {
+        margin-bottom: 1rem;
+        font-size: vars.$l-size;
 
-    .service-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px; // Отступ между названиями и ценами
-
-      .service-names,
-      .service-prices {
-        display: flex;
-        flex-direction: column;
-        gap: 10px; // Отступ между строками
-
-        p {
-          margin: 0;
-          color: black;
-          font-size: 16px;
-          line-height: 1.5;
+        .price {
+          float: right;
         }
       }
+    }
 
-      .service-prices {
-        text-align: right; // Выравниваем цены по правому краю
-        font-weight: bold;
-        color: #333;
-      }
+    &.left {
+      flex-direction: row;
+    }
+
+    &.right {
+      flex-direction: row-reverse;
     }
   }
 }

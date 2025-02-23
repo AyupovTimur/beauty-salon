@@ -6,17 +6,11 @@
   align-items: center;
   min-height: 100vh;
   background-color: vars.$main-color;
-
-  &__title {
-    font-family: "EB Garamond";
-    font-size: vars.$xll-size;
-    font-weight: vars.$l-text-weight;
-    margin-bottom: 8rem;
-  }
+  padding: 9rem 0;
 
   &__navigation {
     width: 50%;
-    margin-bottom: 5.5rem;
+    margin-bottom: 6rem;
 
     ul {
       display: flex;
@@ -55,15 +49,15 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-bottom: 10rem;
+    margin-bottom: 6rem;
     &-border {
       position: relative;
       display: inline-block;
       overflow: hidden;
       cursor: pointer;
       img {
-        width: 30rem;
-        height: 30rem;
+        width: 34rem;
+        height: 33rem;
         transition: transform 0.3s ease;
       }
       &::before {
@@ -80,7 +74,7 @@
 
       &:hover {
         img {
-          transform: scale(1.5);
+          transform: scale(1.2);
         }
 
         &::before {
@@ -88,5 +82,30 @@
         }
       }
     }
+  }
+}
+
+.active {
+  color: vars.$decoration-color;
+}
+
+.other__works {
+  cursor: pointer;
+  padding: 1rem;
+  border: 0.1rem solid vars.$decoration-color;
+  background-color: vars.$main-color;
+  font-size: vars.$m-size;
+  color: vars.$text-color;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    background-color: vars.$decoration-color;
+    color: vars.$main-color;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
   }
 }

@@ -26,7 +26,7 @@ const Header = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "active-link" : "header__item"
+              isActive ? "activeLink" : "header__item"
             }
           >
             Главная
@@ -56,12 +56,12 @@ const Header = () => {
             Услуги
           </NavLink>
           <NavLink
-            to="/feedback"
+            to="/my-works"
             className={({ isActive }) =>
               isActive ? "activeLink" : "header__item"
             }
           >
-            Отзывы
+            Мои работы
           </NavLink>
           {<BurgerMenu open={open} onOpen={onOpen} />}
         </ul>

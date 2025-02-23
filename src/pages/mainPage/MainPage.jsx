@@ -1,11 +1,11 @@
 import BeautyServices from "../../components/beautyServices/BeautyServices";
-import OurWorks from "../../components/ourWorks/OurWorks";
+import MainSlider from "../../components/mainSlider/MainSlider";
 
 const MainPage = () => {
   return (
     <>
+      <MainSlider />
       <BeautyServices />
-      <OurWorks />
     </>
   );
 };
