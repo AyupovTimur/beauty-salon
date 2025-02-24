@@ -21,3 +21,25 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .mainSlider {
+    padding: 7rem 0;
+    &__grid {
+      grid-template-columns: repeat(1, 1fr);
+      h1 {
+        font-size: vars.$xll-mobile-size;
+      }
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .mainSlider {
+    &__grid {
+      h1 {
+        font-size: vars.$xl-size;
+      }
+    }
+  }
+}

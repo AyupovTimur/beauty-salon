@@ -1,6 +1,7 @@
 @use "../../styles/variables.scss" as vars;
 
 .burger-menu {
+  display: none;
   position: relative;
 }
 
@@ -62,8 +63,8 @@
 .menu {
   position: fixed;
   top: 0;
-  right: -30rem;
-  width: 30rem;
+  right: -100%;
+  width: 100%;
   height: 100vh;
   background-color: vars.$main-color;
   transition: right 0.3s ease;
@@ -105,5 +106,11 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 690px) {
+  .burger-menu {
+    display: block;
   }
 }

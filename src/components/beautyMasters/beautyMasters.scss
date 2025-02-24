@@ -9,22 +9,21 @@
   background-color: vars.$main-color;
 
   &__cardGroup {
-    width: 62%;
+    width: 72%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 5rem;
+    place-items: center;
   }
 
   &__information-text {
     font-size: vars.$m-size;
-    margin-bottom: 2rem;
   }
 }
 
 .beautyMaster-card {
   position: relative;
-  width: 40rem;
-  padding: 2rem;
+  width: 45rem;
+  padding: 2.2rem;
   background-color: vars.$text-color;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
   z-index: 1;
@@ -61,5 +60,42 @@
     margin-top: 1rem;
     font-size: vars.$m-size;
     color: vars.$main-color;
+  }
+}
+
+@media (max-width: 1450px) {
+  .beautyMasters {
+    &__cardGroup {
+      gap: 5rem;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .beautyMaster-card {
+    width: 37rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .beautyMaster-card {
+    width: 32rem;
+  }
+}
+
+@media (max-width: 840px) {
+  .beautyMasters {
+    &__cardGroup {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &__information-text {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .beautyMaster-card {
+    width: 26rem;
   }
 }

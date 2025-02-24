@@ -22,6 +22,7 @@
     width: 70%;
     font-size: 1.8rem;
     font-weight: vars.$m-text-weight;
+
     &-list {
       display: flex;
       align-items: center;
@@ -34,9 +35,11 @@
   &__item {
     position: relative;
     cursor: pointer;
+
     &:hover {
       color: vars.$decoration-color;
     }
+
     &::after {
       content: "";
       position: absolute;
@@ -55,10 +58,19 @@
   }
 
   &__icon {
+    width: 2.6rem;
     cursor: pointer;
   }
 }
 
 .activeLink {
   color: vars.$decoration-color;
+}
+
+@media (max-width: 690px) {
+  .header {
+    &__menu {
+      display: none;
+    }
+  }
 }
