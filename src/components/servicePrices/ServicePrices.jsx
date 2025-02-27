@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { getPrices } from "../../reduxSlices/servicesSlice/servicesSlice";
 import Spinner from "../spinner/Spinner";
 import Error from "../error/Error";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ServicePrices = () => {
   const services = useSelector((state) => state.services.services);
@@ -51,7 +52,11 @@ const View = ({ services }) => {
           key={service.id}
           className={`service-item ${index % 2 === 0 ? "left" : "right"}`}
         >
-          <img src={service.image} alt={`Услуга ${service.id}`} />
+          <LazyLoadImage
+            effect="blur"
+            src={service.image}
+            alt={`Услуга ${service.id}`}
+          />
           <ul>
             <div className="service-title">{service.service}</div>
             {service.items.map((item, i) => (

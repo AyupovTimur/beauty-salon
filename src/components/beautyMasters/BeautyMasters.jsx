@@ -1,3 +1,4 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import beautyMaster from "../../images/beautyMasters/master.jpg";
 import "./beautyMasters.scss";
 
@@ -6,11 +7,16 @@ const BeautyMasters = () => {
     <section className="beautyMasters">
       <div className="beautyMasters__cardGroup">
         <div className="beautyMaster-card">
-          <img src={beautyMaster} alt="" className="beautyMaster-card__image" />
-          <h3 className="beautyMaster-card__name">Наталья</h3>
-          <h4 className="beautyMaster-card__profession">
+          <LazyLoadImage
+            src={beautyMaster}
+            alt="Natalia - cosmetologist aesthetician"
+            effect="blur"
+            className="beautyMaster-card__image"
+          />
+          <h2 className="beautyMaster-card__name">Наталья</h2>
+          <h3 className="beautyMaster-card__profession">
             Косметолог - эстетист
-          </h4>
+          </h3>
           <p className="beautyMaster-card__description">
             Забочусь о вашей красоте
           </p>

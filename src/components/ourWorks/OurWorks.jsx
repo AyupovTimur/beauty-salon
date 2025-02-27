@@ -6,6 +6,7 @@ import { setActiveFilter } from "../../reduxSlices/filterSlice/portfolioFilterSl
 import { createSelector } from "@reduxjs/toolkit";
 import Spinner from "../spinner/Spinner";
 import Error from "../error/Error";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const OurWorks = () => {
   const links = [
@@ -89,7 +90,7 @@ const ViewWorks = ({ filterData }) => {
         {filterData.map((item) => {
           return (
             <div key={item.id} className="ourWorks__images-border">
-              <img src={item.img} alt="works" />
+              <LazyLoadImage effect="blur" src={item.img} alt="works" />
             </div>
           );
         })}

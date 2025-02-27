@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import infoImg from "../../images/sliderImg/info.jpg";
 import infoImg2 from "../../images/sliderImg/info2.jpg";
 import "./slider.scss";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Slider = () => {
   const slides = [infoImg, infoImg2];
@@ -28,7 +29,7 @@ const Slider = () => {
       >
         {slides.map((slide, index) => (
           <div key={index} className="slider__slide">
-            <img src={slide} alt={`Slide ${index}`} />
+            <LazyLoadImage src={slide} alt={`Slide ${index}`} />
           </div>
         ))}
       </div>
