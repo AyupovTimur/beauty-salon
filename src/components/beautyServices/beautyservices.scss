@@ -153,6 +153,10 @@
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       gap: 2rem;
+      img {
+        width: 35rem;
+        height: 30rem;
+      }
     }
   }
 }
@@ -189,6 +193,12 @@
         }
       }
     }
+    &__cards {
+      img {
+        width: 30rem;
+        height: 25rem;
+      }
+    }
   }
 }
 
@@ -200,7 +210,7 @@
     }
     &__cards {
       img {
-        width: 28rem;
+        width: 26rem;
         height: 24rem;
       }
     }

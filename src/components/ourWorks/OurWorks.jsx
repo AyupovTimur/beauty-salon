@@ -5,6 +5,7 @@ import { fetchPortfolioData } from "../../reduxSlices/portfolioSlice/portfolioSl
 import { setActiveFilter } from "../../reduxSlices/filterSlice/portfolioFilterSlice";
 import { createSelector } from "@reduxjs/toolkit";
 import Spinner from "../spinner/Spinner";
+import Error from "../error/Error";
 
 const OurWorks = () => {
   const links = [
@@ -48,7 +49,7 @@ const OurWorks = () => {
   }, []);
 
   return (
-    <div className="ourWorks">
+    <section className="ourWorks">
       <nav className="ourWorks__navigation">
         <ul>
           {links.map((link) => {
@@ -69,10 +70,15 @@ const OurWorks = () => {
       </nav>
       {portfolioUpload === "loading" ? (
         <Spinner />
+      ) : portfolioUpload === "error" ? (
+        <>
+          <p style={{ fontSize: "3rem" }}>Что - то пошло не так</p>
+          <Error />
+        </>
       ) : (
         <ViewWorks filterData={filterData} />
       )}
-    </div>
+    </section>
   );
 };
 

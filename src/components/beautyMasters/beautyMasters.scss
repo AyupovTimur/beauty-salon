@@ -96,6 +96,12 @@
 
 @media (max-width: 480px) {
   .beautyMaster-card {
+    width: 30rem;
+  }
+}
+
+@media (max-width: 410px) {
+  .beautyMaster-card {
     width: 26rem;
   }
 }

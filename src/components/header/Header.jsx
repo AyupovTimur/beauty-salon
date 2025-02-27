@@ -10,7 +10,7 @@ const Header = () => {
     <header className="header">
       <nav className="header__menu">
         <ul className="header__menu-list">
-          <a href="#">
+          <a target="_blank" href="#">
             <img
               className="header__icon"
               src={instagramIcon}
@@ -57,7 +57,7 @@ const Header = () => {
           >
             Мои работы
           </NavLink>
-          <a href="#">
+          <a target="_blank" href="#">
             <img
               className="header__icon"
               src={telegrammIcon}

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getPrices } from "../../reduxSlices/servicesSlice/servicesSlice";
 import Spinner from "../spinner/Spinner";
+import Error from "../error/Error";
 
 const ServicePrices = () => {
   const services = useSelector((state) => state.services.services);
@@ -20,13 +21,25 @@ const ServicePrices = () => {
   }, []);
 
   return (
-    <div className="service-prices">
+    <section className="service-prices">
       {servicesLoading === "loading" ? (
         <Spinner />
+      ) : servicesLoading === "error" ? (
+        <div>
+          <p
+            style={{
+              margin: "0 auto",
+              fontSize: "3rem",
+            }}
+          >
+            Что - то пошло не так
+          </p>
+          <Error />
+        </div>
       ) : (
         <View services={services} />
       )}
-    </div>
+    </section>
   );
 };
 

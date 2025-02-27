@@ -50,14 +50,21 @@
 
 @media (max-width: 530px) {
   .slider {
+    width: 35rem;
+    height: 57rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .slider {
     width: 30rem;
-    height: 50rem;
+    height: 53rem;
   }
 }
 
 @media (max-width: 395px) {
   .slider {
-    width: 25rem;
-    height: 45rem;
+    width: 27rem;
+    height: 47rem;
   }
 }

@@ -32,16 +32,16 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer__socialMedia">
-          <a href="">
+          <a target="_blank" href="">
             <img src={instagrammIcon} alt="" />
           </a>
-          <a href="">
+          <a target="_blank" href="">
             <img src={whatsApp} alt="" />
           </a>
-          <a href="">
+          <a target="_blank" href="">
             <img src={telegrammIcon} alt="" />
           </a>
-          <a href="">
+          <a target="_blank" href="">
             <img src={vkIcon} alt="" />
           </a>
         </div>

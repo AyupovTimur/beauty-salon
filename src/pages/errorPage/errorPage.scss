@@ -9,6 +9,15 @@
   background-color: vars.$main-color;
 
   &__title {
+    text-align: center;
     font-size: vars.$xll-size;
+  }
+}
+
+@media (max-width: 920px) {
+  .errorPage {
+    &__title {
+      font-size: vars.$xl-size;
+    }
   }
 }
