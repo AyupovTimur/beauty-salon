@@ -1,8 +1,9 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import errorGif from "../../images/error/error.gif";
 
 const Error = () => {
   return (
-    <img
+    <LazyLoadImage
       src={errorGif}
       alt="error"
       style={{

@@ -10,6 +10,7 @@ import peeling from "../../images/beautyService/peeling.png";
 import depilation from "../../images/beautyService/depilation.png";
 import lips from "../../images/beautyService/lips.jpg";
 import { Link } from "react-router";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const BeautyServices = () => {
   const beautyServicesList = [
@@ -43,7 +44,11 @@ const BeautyServices = () => {
           return (
             <Link key={item.id} to="/services" className="services__cards_item">
               <div key={item.id} className="services__cards_item-border">
-                <img src={item.img} alt="cosmetology-icon" />
+                <LazyLoadImage
+                  effect="blur"
+                  src={item.img}
+                  alt="cosmetology-icon"
+                />
               </div>
               <div className="services__cards-text">{item.title}</div>
             </Link>
@@ -52,10 +57,10 @@ const BeautyServices = () => {
       </div>
       <div className="services__brends">
         <div className="services__brends-group">
-          <img src={kevinMurphy} alt="Kevin-Murphy" />
-          <img src={oribe} alt="Oribe" />
-          <img src={alterna} alt="Alterna" />
-          <img src={aldoCoppola} alt="Aldo-Coppola" />
+          <LazyLoadImage effect="blur" src={kevinMurphy} alt="Kevin-Murphy" />
+          <LazyLoadImage effect="blur" src={oribe} alt="Oribe" />
+          <LazyLoadImage effect="blur" src={alterna} alt="Alterna" />
+          <LazyLoadImage effect="blur" src={aldoCoppola} alt="Aldo-Coppola" />
         </div>
       </div>
     </section>

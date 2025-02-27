@@ -4,6 +4,7 @@ import instagrammIcon from "../../images/header/instIcon.svg";
 import whatsApp from "../../images/footer/whatsapp.svg";
 import telegrammIcon from "../../images/footer/telegram.svg";
 import vkIcon from "../../images/footer/vk.svg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Footer = () => {
   return (
@@ -33,16 +34,16 @@ const Footer = () => {
         </div>
         <div className="footer__socialMedia">
           <a target="_blank" href="">
-            <img src={instagrammIcon} alt="" />
+            <LazyLoadImage src={instagrammIcon} alt="" />
           </a>
           <a target="_blank" href="">
-            <img src={whatsApp} alt="" />
+            <LazyLoadImage src={whatsApp} alt="" />
           </a>
           <a target="_blank" href="">
-            <img src={telegrammIcon} alt="" />
+            <LazyLoadImage src={telegrammIcon} alt="" />
           </a>
           <a target="_blank" href="">
-            <img src={vkIcon} alt="" />
+            <LazyLoadImage src={vkIcon} alt="" />
           </a>
         </div>
       </div>
