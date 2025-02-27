@@ -21,7 +21,7 @@ const BeautyServices = () => {
   ];
 
   return (
-    <div className="services">
+    <section className="services">
       <img className="services__icon" src={quoteIcon} alt="quoteIcon" />
       <div className="services__description">
         <h2>Почему выбирают меня? </h2>
@@ -58,7 +58,7 @@ const BeautyServices = () => {
           <img src={aldoCoppola} alt="Aldo-Coppola" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

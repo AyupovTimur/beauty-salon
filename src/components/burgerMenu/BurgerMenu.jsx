@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import "./burgerMenu.scss";
 import { Link } from "react-router";
 
@@ -13,6 +13,17 @@ const BurgerMenu = () => {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [isOpen]);
+
   return (
     <div className="burger-menu">
       <button className="burger-button" onClick={toggleMenu}>
@@ -24,9 +35,6 @@ const BurgerMenu = () => {
       </button>
 
       <div className={`menu ${isOpen ? "open" : null}`}>
-        <button className="close-button" onClick={closeMenu}>
-          &times;
-        </button>
         <ul>
           <li>
             <Link to="/" onClick={closeMenu}>

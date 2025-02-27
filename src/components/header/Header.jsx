@@ -1,15 +1,16 @@
 import instagramIcon from "../../images/header/instIcon.svg";
 import headerIcon from "../../images/header/headerIcon.svg";
+import telegrammIcon from "../../images/footer/telegram.svg";
 import { NavLink } from "react-router";
-import "./header.scss";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
+import "./header.scss";
 
 const Header = () => {
   return (
     <header className="header">
       <nav className="header__menu">
         <ul className="header__menu-list">
-          <a href="#">
+          <a target="_blank" href="#">
             <img
               className="header__icon"
               src={instagramIcon}
@@ -56,9 +57,16 @@ const Header = () => {
           >
             Мои работы
           </NavLink>
-          {<BurgerMenu />}
+          <a target="_blank" href="#">
+            <img
+              className="header__icon"
+              src={telegrammIcon}
+              alt="instagramIcon"
+            />
+          </a>
         </ul>
       </nav>
+      {<BurgerMenu />}
     </header>
   );
 };

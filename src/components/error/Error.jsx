@@ -7,8 +7,8 @@ const Error = () => {
       alt="error"
       style={{
         display: "block",
-        width: "50rem",
-        height: "50rem",
+        width: "30rem",
+        height: "30rem",
         objectFit: "contain",
         margin: "0 auto",
       }}
